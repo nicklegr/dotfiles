@@ -16,7 +16,7 @@ compinit
 # End of lines added by compinstall
 
 # プロンプト
-source ~/dotfiles/zsh-git-prompt/zshrc.sh
+source ~/dotfiles/zsh/zsh-git-prompt/zshrc.sh
 
 PROMPT=$'%{\e[33m%}%m %* %~%{\e[m%} $(git_super_status)\n%{\e[33m%}%#%{\e[m%} '
 TMOUT=1
