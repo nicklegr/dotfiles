@@ -1,0 +1,1 @@
+alias docker_remove_old_images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}" | tr -s ' ' | cut -d ' ' -f 3)'
