@@ -1,0 +1,38 @@
+# GCJ Ruby
+function go()
+{
+    if ! [ -e $1.rb ]; then
+        cp tmpl.rb $1.rb
+    fi
+
+    sublime $1.rb
+    touch $1-sample.in
+    sublime $1-sample.in
+}
+
+function run()
+{
+    ruby $1.rb < $2
+}
+
+function debug()
+{
+    ruby --debug $1.rb < $2
+}
+
+function sample()
+{
+    ruby --debug $1.rb < $1-sample.in
+}
+
+function small()
+{
+    ruby $1.rb < $1-small-attempt$2.in > $1-small-attempt$2.out
+    sublime $1-small-attempt$2.out
+}
+
+function large()
+{
+    ruby $1.rb < $1-large.in > $1-large.out
+    sublime $1-large.out
+}

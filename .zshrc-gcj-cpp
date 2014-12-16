@@ -1,0 +1,38 @@
+# GCJ C++
+GCJ_CPPFLAGS="-O3 -Wall -Wl,--large-address-aware"
+function goC()
+{
+    if ! [ -e $1.cpp ]; then
+        cp tmpl.cpp $1.cpp
+    fi
+
+    sublime $1.cpp
+    sublime $1-sample.in
+}
+
+function debugC()
+{
+    g++ $GCJ_CPPFLAGS -DDEBUG -DLOCAL $1.cpp -o $1.exe && ./$1.exe < $2
+}
+
+function runC()
+{
+    g++ $GCJ_CPPFLAGS $1.cpp -o $1.exe && ./$1.exe < $2
+}
+
+function sampleC()
+{
+    g++ $GCJ_CPPFLAGS $1.cpp -o $1.exe && ./$1.exe < $1-sample.in
+}
+
+function smallC()
+{
+    g++ $GCJ_CPPFLAGS $1.cpp -o $1.exe && ./$1.exe < $1-small-attempt$2.in > $1-small-attempt$2.out
+    sublime $1-small-attempt$2.out
+}
+
+function largeC()
+{
+    g++ $GCJ_CPPFLAGS $1.cpp -o $1.exe && ./$1.exe < $1-large.in > $1-large.out
+    sublime $1-large.out
+}
