@@ -18,12 +18,6 @@ compinit
 # プロンプト
 source ~/dotfiles/zsh-git-prompt/zshrc.sh
 
-# PROMPT='[%n@%m %~]%# '
-# PROMPT='[%n@%m %D %* %~]%# '
-# PROMPT='\[\033[1;33m\][%n@%m %D %* %~]%#\[\033[0m\] '
-# PROMPT=$'%{\e[33m%}[%n@%m %D %* %~]%#%{\e[m%} '
-# PROMPT=$'%{\e[33m%}[%* %~]%#%{\e[m%} '
-# PROMPT=$'%{\e[33m%}[%m %* %~ $(git_super_status)]\n%#%{\e[m%} '
 PROMPT=$'%{\e[33m%}%m %* %~%{\e[m%} $(git_super_status)\n%{\e[33m%}%#%{\e[m%} '
 TMOUT=1
 TRAPALRM() {
