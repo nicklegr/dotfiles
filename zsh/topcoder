@@ -1,0 +1,6 @@
+# TopCoder
+TOPCODER_CPPFLAGS="-O3 -Wall -Wl,--large-address-aware"
+function tc()
+{
+    g++ $TOPCODER_CPPFLAGS $1 -o test.exe && ./test.exe
+}
