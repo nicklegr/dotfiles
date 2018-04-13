@@ -25,3 +25,26 @@ function sample()
     ruby --debug $1.rb < $1-sample.in
 }
 
+function goi()
+{
+    if ! [ -e $1-testing_tool.py ]; then
+        mv testing_tool.py $1-testing_tool.py
+    fi
+
+    if ! [ -e $1.rb ]; then
+        cp tmpl.rb $1.rb
+    fi
+
+    sublime $1-testing_tool.py
+    sublime $1.rb
+}
+
+function runi()
+{
+    python $1-testing_tool.py ruby $1.rb
+}
+
+function debugi()
+{
+    python $1-testing_tool.py ruby --debug $1.rb
+}
