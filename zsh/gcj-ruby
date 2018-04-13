@@ -25,14 +25,3 @@ function sample()
     ruby --debug $1.rb < $1-sample.in
 }
 
-function small()
-{
-    ruby $1.rb < $1-small-attempt$2.in > $1-small-attempt$2.out
-    sublime $1-small-attempt$2.out
-}
-
-function large()
-{
-    ruby $1.rb < $1-large.in > $1-large.out
-    sublime $1-large.out
-}

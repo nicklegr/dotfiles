@@ -25,14 +25,3 @@ function sampleC()
     g++ $GCJ_CPPFLAGS $1.cpp -o $1.exe && ./$1.exe < $1-sample.in
 }
 
-function smallC()
-{
-    g++ $GCJ_CPPFLAGS $1.cpp -o $1.exe && ./$1.exe < $1-small-attempt$2.in > $1-small-attempt$2.out
-    sublime $1-small-attempt$2.out
-}
-
-function largeC()
-{
-    g++ $GCJ_CPPFLAGS $1.cpp -o $1.exe && ./$1.exe < $1-large.in > $1-large.out
-    sublime $1-large.out
-}
